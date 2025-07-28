@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 public class HomePageTest extends BaseTest{
-    @Test
+    @Test(groups = "Sanity")
     public void varifyPresenceOfDashboardOnhomPage(){
        String dashboard= loginAndNavigateToHomePage().gettextOfDashboardInHomePage();
         Assert.assertEquals(dashboard,"Dashboard");

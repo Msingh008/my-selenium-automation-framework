@@ -18,10 +18,8 @@ import java.time.Duration;
 import java.util.Map;
 
 public final  class  LoginTest extends BaseTest {
-    @Test
-    @CustomAnnotation(
-            AuthorName = "Manish Singh",testCategory = "Regression"
-    )
+    @Test(groups = "Sanity")
+
     public void validateUserLoginAndLogout() {
         boolean flag=new LoginPage().enterUsername(PropertyReader.get(PropertyKeys.USERNAME)).enterPassword(PropertyReader.get(PropertyKeys.PASSWORD).trim()).clickLoginButton()
                 .clickOnUserprofile().clickOnLogoutLink()
@@ -30,10 +28,8 @@ public final  class  LoginTest extends BaseTest {
 
 
     }
-    @CustomAnnotation(
-            AuthorName = "Manish Singh",testCategory = "Regression"
-    )
-   @Test(dataProvider = "LoginData" ,dataProviderClass = DataProviderUtility.class)
+
+   @Test(dataProvider = "LoginData" ,dataProviderClass = DataProviderUtility.class,groups = "Smoke")
     public void validateLoginwithDifferentSetOfValues(Map<String,String> data){
        System.out.println("Userid and pass for the iteration: "+data);
         String textOnHomePage = loginAndNavigateToHomePage(data).gettextOfDashboardInHomePage();
