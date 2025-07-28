@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Practice Suite" thread-count="3" parallel="methods" data-provider-thread-count="4" >
+    <listeners>
+        <listener class-name="Listeners.TestListeners"></listener>
+    </listeners>
+    <test name="Test Basics 1">
+
+        <classes>
+            <class name="com.tmb.tests.HomePageTest"></class>
+            <class name="com.tmb.tests.LoginTest"></class>
+        </classes>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->

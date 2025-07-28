@@ -1,0 +1,12 @@
+package com.tmb.Wrappers;
+
+public enum PropertyKeys {
+    URL,
+    USERNAME,
+    PASSWORD,
+    PASSEDSTEPSCREENSHOT,
+    FAILEDSTEPSCREENSHOT,
+    SKIPPEDSTEPSCREENSHOT,
+    BROWSER, OVERRIDEREPORT
+
+}
