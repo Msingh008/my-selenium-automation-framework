@@ -48,9 +48,7 @@
                         System.out.println("Method form datasheet inside else "+data.get(i).get("TestCaseName"));
                         System.out.println("Current method form annotation transformer "+testMethod.getName());
                     };
-                }
-
-                }
+                }}
             }
 
 
@@ -88,9 +86,8 @@
         }
 
         public void onStart(ITestContext context) {
-            if(ExtentReportSetUp.extentReports==null){
                 ExtentReportSetUp.getReportSchema();
-            }
+
         }
 
         public void onFinish(ITestContext context) {
