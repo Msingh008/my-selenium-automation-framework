@@ -52,7 +52,7 @@
 
             }
             return extentReports;
-
+// Adding this comment just to check if github hook trigger works or not....
         }
 
        public static void flushReport(){
