@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <Configuration status="warn">
+        <Properties>
+            <Property name="basePath">C:/temp/logs</Property>
+        </Properties>
+
+        <Appenders>
+            <RollingFile name="fileLogger"
+                         fileName="Logs/app.log"
+                         filePattern="Logs/app-%d{yyyy-MM-dd}.log">
+                <PatternLayout>
+                    <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+                    </pattern>
+                </PatternLayout>
+                <Policies>
+                    <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                    <SizeBasedTriggeringPolicy size="10MB" />
+                </Policies>
+                <!-- Max 10 files will be created everyday -->
+                <DefaultRolloverStrategy max="10">
+                    <Delete basePath="Logs" maxDepth="10">
+                        <!-- Delete all files older than 30 days -->
+                        <IfLastModified age="30d" />
+                    </Delete>
+                </DefaultRolloverStrategy>
+            </RollingFile>
+
+
+            <Console name="ConsoleAp" target="SYSTEM_OUT">
+                <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n"/>
+            </Console>
+
+        </Appenders>
+        <Loggers>
+            <Logger name="com.tmb.Logger.Logger" level="info" additivity="false">
+                <appender-ref ref="fileLogger" />
+          </Logger>
+
+            <Logger name="com.tmb.Logger.Logge2" level="trace" additivity="false">
+                <appender-ref ref="ConsoleAp"/>
+            </Logger>
+            <Root level="info" additivity="false">
+                <appender-ref ref="fileLogger" />
+            </Root>
+        </Loggers>
+    </Configuration>
