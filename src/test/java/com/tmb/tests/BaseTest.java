@@ -29,7 +29,7 @@ public class BaseTest {
             Map<String,String> dataAsMap=(Map<String,String>)data[0];
             WrapperMethods.initilizeDriver(dataAsMap.get("Browser"));
         } catch (Exception e) {
-            System.out.println("As method is not linked to data provider.So moving ahead with default browser as per Jenkins.....");
+            System.out.println("As method is not linked to data provider.So moving ahead with default browser as per Jenkins:--- "+System.getProperty("BrowserName"));
             WrapperMethods.initilizeDriver(System.getProperty("BrowserName"));
 
         }

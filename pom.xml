@@ -24,9 +24,6 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>textng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <systemPropertyVariables>
-                        <groups>${groups}</groups>
-                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>
